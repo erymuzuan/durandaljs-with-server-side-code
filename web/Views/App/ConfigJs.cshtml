@@ -1,0 +1,50 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+}
+<script src="~/Scripts/knockout-2.2.1.debug.js"></script>
+<script src="~/Scripts/underscore.min.js"></script>
+<script type="text/javascript" data-script="true">
+    define(function () {
+        toastr.options.timeOut = 4000;
+        toastr.options.positionClass = 'toast-bottom-right';
+        
+        var routes = [{
+                url: 'shiftschedule',
+                moduleId: 'viewmodels/shiftschedule',
+                name: 'Shift Schedule',
+                visible: true,
+                caption: 'Shift Schedule'
+            }, {
+                url: 'details',
+                moduleId: 'viewmodels/details',
+                name: 'Details',
+                visible: true,
+                caption: 'Details'
+            },{
+                url: 'something',
+                moduleId: 'viewmodels/something',
+                name: 'something',
+                visible: true,
+                caption: 'something'
+            },
+            {
+                url: 'leave',
+                moduleId: 'viewmodels/leave',
+                name: 'Leave Application',
+                visible: true,
+                caption: 'Leave application',
+                settings: { admin: true }
+            }
+        ];
+
+        var startModule = 'shiftschedule';
+
+        return {
+            debugEnabled: ko.observable(true),
+            routes: routes,
+            startModule: startModule
+        };
+    });
+</script>

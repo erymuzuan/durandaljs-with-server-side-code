@@ -1,0 +1,22 @@
+﻿@model dynamic
+@{
+    Layout = null;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="span8">
+            <button class="btn btn-success btn-large" data-bind="click : addStaff">Click Me!!!</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <ul data-bind="foreach: staffs">
+                <li>
+                    <span data-bind="text: id"></span>
+                    <span data-bind="text: name"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

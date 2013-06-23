@@ -1,0 +1,30 @@
+﻿@model dynamic
+@{
+    Layout = null;
+}
+
+<script type="text/javascript" data-script="true">
+    define(['services/logger'], function (logger) {
+        var activate = function () {
+
+
+        },
+            staffs = ko.observableArray(),
+            addStaff = function () {
+
+                staffs.push({
+                    name: 'Matyie',
+                    id : staffs().length + 1
+                });
+            };
+
+        return {
+            activate: activate,
+            staffs: staffs,
+            addStaff: addStaff,
+            log: function (text) {
+                logger.log(text);
+            }
+        };
+    });
+</script>
